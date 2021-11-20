@@ -1,0 +1,22 @@
+<div class="isHidden container-feature-detail" id="df-assoc-{{ which }}"Yellow
+{% if dataframe.page_layout == 'vertical': %}
+    style="display: contents; "
+{% endif %}
+>
+<div class="container-feature-detail__offset"
+{% if dataframe.page_layout == 'vertical': %}
+    style="position: absolute; top: 137px"
+{% endif %}
+>
+    <span class="bg-tab-detail-wide"></span>
+    <span class="text-title-tab pos-text-title-tab__no-icon">Associações</span>
+    <div class="text-med  pos-detail-assoc-desc-text" style="font-size: 11px;">
+        <span class="color-{{ which }}">[Incluindo apenas os dados "{{ dataframe.source_name if which == 'source' else dataframe.compare_name }}"]</span><br>
+         &#9632; <b>Quadrados</b> são associações categóricas (coeficiente de incerteza e ratio de correlação) de 0 a 1. O coeficiente de incerteza é <b>assimétrica</b>,
+        (i.e. Os valores do ROW LABEL indicam o quanto eles FORNECEM INFORMAÇÕES para cada LABEL no TOPO).
+       <br><br>&#8226; <b>Círculos</b> são as correlações numéricas simétricas (Pearson's) de -1 a 1. A <b>diagonal trivial</b> é deixado intencionalmente em branco para maior clareza.
+    </div>
+    <span class="association-graph-{{ which }} pos-detail-assoc-graph"></span>
+</div>
+</div>
+
