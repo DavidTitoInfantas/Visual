@@ -5,13 +5,13 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
 import matplotlib.patches as patches
 
-from sweetviz.config import config
-from sweetviz import sv_html_formatters
-from sweetviz.sv_types import FeatureType, FeatureToProcess
-import sweetviz.graph
+from sweetviz_drz.config import config
+from sweetviz_drz import sv_html_formatters
+from sweetviz_drz.sv_types import FeatureType, FeatureToProcess
+import sweetviz_drz.graph
 from matplotlib.ticker import PercentFormatter
 
-class GraphLegend(sweetviz.graph.Graph):
+class GraphLegend(sweetviz_drz.graph.Graph):
     def __init__(self, dataframe_report):
         styles = ["graph_base.mplstyle"]
         self.set_style(styles)
@@ -63,14 +63,14 @@ class GraphLegend(sweetviz.graph.Graph):
             axs.add_line(
                 matplotlib.lines.Line2D(to_fraction_seq([gfx_x_source, gfx_x_source + bar_size[0]], scale[0]),
                                         to_fraction_seq([gfx_line_y, gfx_line_y], scale[1]), lw=(1),
-                                        color=sweetviz.graph.COLOR_TARGET_SOURCE, marker='o' ))
+                                        color=sweetviz_drz.graph.COLOR_TARGET_SOURCE, marker='o' ))
             text1[1] = gfx_line_y
             text1 += line_text_offset
             if dataframe_report.get_target_type() == FeatureType.TYPE_NUM:
                 text_content = "Avg. " + dataframe_report._target["name"]
             else:
                 text_content = "% " + dataframe_report._target["name"]
-            text1_elem = plt.text(text1[0] * scale[0], text1[1] * scale[1], text_content, fontsize=8, color=sweetviz.graph.COLOR_TARGET_SOURCE,
+            text1_elem = plt.text(text1[0] * scale[0], text1[1] * scale[1], text_content, fontsize=8, color=sweetviz_drz.graph.COLOR_TARGET_SOURCE,
                                   ha='right')
 
             if dataframe_report.compare_name and dataframe_report._target.get("compare"):
@@ -78,7 +78,7 @@ class GraphLegend(sweetviz.graph.Graph):
                     matplotlib.lines.Line2D(
                         to_fraction_seq([gfx_x_compare, gfx_x_compare + bar_size[0]], scale[0]),
                         to_fraction_seq([gfx_line_y, gfx_line_y], scale[1]), lw=(1),
-                        color=sweetviz.graph.COLOR_TARGET_COMPARE, marker='o'))
+                        color=sweetviz_drz.graph.COLOR_TARGET_COMPARE, marker='o'))
 
                 text2[1] = gfx_line_y
                 text2 += line_text_offset
@@ -88,7 +88,7 @@ class GraphLegend(sweetviz.graph.Graph):
                 else:
                     text_content = "% " + dataframe_report._target["name"]
                     #+ f" ({dataframe_report.compare_name})"
-                text2_elem = plt.text(text2[0] * scale[0], text2[1] * scale[1], text_content, fontsize=8, color=sweetviz.graph.COLOR_TARGET_COMPARE)
+                text2_elem = plt.text(text2[0] * scale[0], text2[1] * scale[1], text_content, fontsize=8, color=sweetviz_drz.graph.COLOR_TARGET_COMPARE)
 
         # transf = axs.transData.inverted()
         # bb = text1_elem.get_window_extent(renderer=fig.canvas.renderer)
