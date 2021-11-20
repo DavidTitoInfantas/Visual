@@ -1,5 +1,5 @@
 import setuptools
-from sweetviz import __title__, __version__, __author__, __license__
+from sweetviz_drz import __title__, __version__, __author__, __license__
 
 with open("README.md", "r") as fh:
     long_description_from_file = fh.read()
