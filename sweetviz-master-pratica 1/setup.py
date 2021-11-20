@@ -12,7 +12,7 @@ setuptools.setup(
     description="A pandas-based library to visualize and compare datasets.",
     long_description=long_description_from_file,
     long_description_content_type="text/markdown",
-    url="https://github.com/DavidTitoInfantas/Visual/sweetviz-master-pratica_1",
+    url="https://github.com/DavidTitoInfantas/Visual/sweetviz-master-pratica 1",
     packages=setuptools.find_packages(),
 	license=__license__,
 	include_package_data=True,
