@@ -2,11 +2,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
 
-from sweetviz import sv_math
-from sweetviz import utils
-from sweetviz.config import config
-from sweetviz.sv_types import FeatureType, FeatureToProcess, OTHERS_GROUPED
-import sweetviz.graph
+from sweetviz_drz import sv_math
+from sweetviz_drz import utils
+from sweetviz_drz.config import config
+from sweetviz_drz.sv_types import FeatureType, FeatureToProcess, OTHERS_GROUPED
+import sweetviz_drz.graph
 from typing import List
 
 
@@ -53,7 +53,7 @@ def plot_grouped_bars(tick_names: List[str], data_lists: List[List], \
     return locations_centered, bar_width
 
 
-class GraphCat(sweetviz.graph.Graph):
+class GraphCat(sweetviz_drz.graph.Graph):
     def __init__(self, which_graph: str, to_process: FeatureToProcess):
         if to_process.is_target() and which_graph == "mini":
             styles = ["graph_base.mplstyle", "graph_target.mplstyle"]
@@ -207,7 +207,7 @@ class GraphCat(sweetviz.graph.Graph):
                 # axs.xaxis.tick_top()
                 # ax2.tick_params(axis='x', direction='out', pad=2, labelsize=8, length=2)
                 axs.plot(target_values_source, category_centers,
-                         marker='o', color=sweetviz.graph.COLOR_TARGET_SOURCE)
+                         marker='o', color=sweetviz_drz.graph.COLOR_TARGET_SOURCE)
 
                 target_values_compare = list()
                 if to_process.compare is not None and \
@@ -223,7 +223,7 @@ class GraphCat(sweetviz.graph.Graph):
                         target_values_compare.append(tick_num)
                         # target_values_compare.append(tick_num * matched_data_series[name])
                     axs.plot(target_values_compare, category_centers,
-                             marker='o', color=sweetviz.graph.COLOR_TARGET_COMPARE)
+                             marker='o', color=sweetviz_drz.graph.COLOR_TARGET_COMPARE)
                 # else:
                 #     # TARGET BOOL: NO compare TARGET -> Just fill with zeros so alignment is still good
                 #     for name in tick_names:
