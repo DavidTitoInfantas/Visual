@@ -2,9 +2,9 @@ import math
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from sweetviz.sv_types import FeatureType
-import sweetviz.graph
-from sweetviz.config import config
+from sweetviz_drz.sv_types import FeatureType
+import sweetviz_drz.graph
+from sweetviz_drz.config import config
 import itertools
 import matplotlib.patches as patches
 from textwrap import wrap
@@ -85,7 +85,7 @@ def wrap_custom(source_text, separator_chars, width=70, keep_separators = True):
             char_index += 1
     return output
 
-class GraphAssoc(sweetviz.graph.Graph):
+class GraphAssoc(sweetviz__drz.graph.Graph):
     def __init__(self, dataframe_report, which_graph: str, association_data):
         self.set_style(["graph_base.mplstyle"])
 
