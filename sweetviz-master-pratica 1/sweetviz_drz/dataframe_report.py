@@ -5,18 +5,18 @@ import pandas as pd
 from numpy import isnan
 from tqdm.auto import tqdm
 
-from sweetviz.sv_types import NumWithPercent, FeatureToProcess, FeatureType
-import sweetviz.from_dython as associations
-import sweetviz.series_analyzer as sa
-import sweetviz.utils as su
-from sweetviz.graph_associations import GraphAssoc
-from sweetviz.graph_associations import CORRELATION_ERROR
-from sweetviz.graph_associations import CORRELATION_IDENTICAL
-from sweetviz.graph_legend import GraphLegend
-from sweetviz.config import config
-import sweetviz.comet_ml_logger as comet_ml_logger
-import sweetviz.sv_html as sv_html
-from sweetviz.feature_config import FeatureConfig
+from sweetviz_drz.sv_types import NumWithPercent, FeatureToProcess, FeatureType
+import sweetviz_drz.from_dython as associations
+import sweetviz_drz.series_analyzer as sa
+import sweetviz_drz.utils as su
+from sweetviz_drz.graph_associations import GraphAssoc
+from sweetviz_drz.graph_associations import CORRELATION_ERROR
+from sweetviz_drz.graph_associations import CORRELATION_IDENTICAL
+from sweetviz_drz.graph_legend import GraphLegend
+from sweetviz_drz.config import config
+import sweetviz_drz.comet_ml_logger as comet_ml_logger
+import sweetviz_drz.sv_html as sv_html
+from sweetviz_drz.feature_config import FeatureConfig
 import webbrowser
 
 
