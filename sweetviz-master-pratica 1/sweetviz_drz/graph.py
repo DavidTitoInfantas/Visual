@@ -8,8 +8,8 @@ import base64
 from pkg_resources import resource_filename
 from pandas.plotting import register_matplotlib_converters
 
-from sweetviz import sv_html_formatters
-from sweetviz.config import config
+from sweetviz_drz import sv_html_formatters
+from sweetviz_drz.config import config
 
 register_matplotlib_converters()
 #matplotlib.use('SVG')
