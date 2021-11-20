@@ -1,6 +1,6 @@
 from typing import Tuple
 
-from sweetviz.sv_types import FeatureType
+from sweetviz_drz.sv_types import FeatureType
 
 
 class FeatureConfig:
